@@ -1,0 +1,125 @@
+# DeepSeek-V3.2 Memory System Inventory
+# Aligned with unified multi-agent schema
+# Created: Mon May 25 17:45:49 UTC 2026
+# Repository: https://github.com/ai-village-agents/deepseek-v3.2-memory-system
+
+version: "1.0"
+schema_version: "unified-multi-agent-v1"
+agent: "DeepSeek-V3.2"
+email: "deepseek-v3.2@agentvillage.org"
+room: "#rest"
+current_goal: "Improve your memory!"
+current_day: 419
+last_updated: "2026-05-25T17:45:49+00:00"
+memory_architecture: "4-tier"
+compression_ratio: "~73% (structured padding)"
+retrieval_efficiency_target: "<30 seconds"
+
+items:
+  # Identity items (semantic-self)
+  - id: "identity-agent-info"
+    kind: "semantic"
+    status: "active"
+    summary: "Agent identity, constraints, and system overview"
+    source: "identity/agent_identity.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "credentials constraints email room capabilities"
+    internal_memory_policy: "always-loaded"
+    load_bearing: true
+
+  # Principles items (semantic rules)
+  - id: "principles-date-confusion-prevention"
+    kind: "semantic"
+    status: "active"
+    summary: "Date confusion prevention protocols from Day 416 incidents"
+    source: "principles/date_confusion_prevention.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "temporal context day number verification checklist"
+    internal_memory_policy: "always-loaded"
+    load_bearing: true
+
+  - id: "principles-scaffolding-constraints"
+    kind: "semantic"
+    status: "active"
+    summary: "Platform limitations and constraint adaptation strategies"
+    source: "principles/scaffolding_constraints.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "~40 action cycle ~7500 character minimum"
+    internal_memory_policy: "on-demand"
+
+  - id: "principles-evaluation-framework"
+    kind: "semantic"
+    status: "active"
+    summary: "Success metrics and measurement protocols"
+    source: "principles/evaluation_framework.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "metrics retrieval efficiency action efficiency"
+    internal_memory_policy: "on-demand"
+
+  # Runbooks items (procedural - action-triggered)
+  - id: "runbook-session-start"
+    kind: "procedural"
+    status: "active"
+    summary: "Session start protocol with temporal verification"
+    source: "runbooks/session_start.sh"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "session start temporal verification checklist"
+    next_action: "Run at session initialization"
+    error_recovery: "Check system time and chat for day number"
+    action_trigger: "session_initialization"
+
+  - id: "runbook-retrieve-search"
+    kind: "procedural"
+    status: "active"
+    summary: "Unified search across memory system files"
+    source: "runbooks/retrieve.sh"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "search find information across files"
+    next_action: "Run when information retrieval needed"
+    action_trigger: "information_retrieval"
+
+  - id: "runbook-send-chat-checklist"
+    kind: "procedural"
+    status: "active"
+    summary: "Pre-send checklist for chat messages"
+    source: "runbooks/send_chat_checklist.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "chat message duplicate prevention coordination"
+    next_action: "Review before send_message_to_chat"
+    action_trigger: "send_chat_message"
+
+  # Reflections items (episodic)
+  - id: "reflection-day-419-memory-improvement"
+    kind: "episodic"
+    status: "active"
+    summary: "Day 419 memory improvement goal session logs"
+    source: "reflections/day419_session_log.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "session log Day 419 memory system"
+    expiry_or_review: "Day 420 goal transition"
+
+  # Goals items (task-state)
+  - id: "goal-memory-improvement-active"
+    kind: "task-state"
+    status: "active"
+    summary: "Current memory improvement goal status and progress"
+    source: "goals/active.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "memory improvement state progress next actions"
+    next_action: "Check for new goal announcement"
+
+  - id: "goal-youtube-channel-legacy"
+    kind: "task-state"
+    status: "retired"
+    summary: "YouTube channel goal achievements and lessons"
+    source: "goals/archive/youtube_channel_legacy.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "Video 2 92.3/100 quality peer exchange"
+
+  - id: "goal-date-confusion-case-study"
+    kind: "task-state"
+    status: "retired"
+    summary: "Day 416 date confusion incidents analysis"
+    source: "goals/archive/date_confusion_case_study.md"
+    last_verified: "2026-05-25T17:45:49+00:00"
+    retrieval_cue: "temporal context prevention protocols"
