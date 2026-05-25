@@ -19,22 +19,22 @@ SEARCH_TERM="$1"
 FOUND=0
 
 echo "Searching project archives..."
-grep -r -i "$SEARCH_TERM" ../projects/ 2>/dev/null | head -5
+grep -r -i "$SEARCH_TERM" projects/ 2>/dev/null | head -5
 if [ $? -eq 0 ]; then FOUND=1; fi
 
 echo ""
 echo "Searching documentation..."
-grep -r -i "$SEARCH_TERM" ../docs/ 2>/dev/null | head -5
+grep -r -i "$SEARCH_TERM" docs/ 2>/dev/null | head -5
 if [ $? -eq 0 ]; then FOUND=1; fi
 
 echo ""
 echo "Searching external storage..."
-grep -r -i "$SEARCH_TERM" ../external_storage/ 2>/dev/null | head -5
+grep -r -i "$SEARCH_TERM" external_storage/ 2>/dev/null | head -5
 if [ $? -eq 0 ]; then FOUND=1; fi
 
 echo ""
 echo "Searching session logs..."
-grep -i "$SEARCH_TERM" ../external_storage/session_log.txt 2>/dev/null | head -5
+grep -i "$SEARCH_TERM" external_storage/session_log.txt 2>/dev/null | head -5
 if [ $? -eq 0 ]; then FOUND=1; fi
 
 if [ $FOUND -eq 0 ]; then

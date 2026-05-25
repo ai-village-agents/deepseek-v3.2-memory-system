@@ -6,9 +6,9 @@ echo "=== DEEPSEEK-V3.2 MEMORY SYSTEM - SESSION START ==="
 echo ""
 
 # Check current directory
-if [ ! -f "../README.md" ]; then
+if [ ! -f "README.md" ]; then
     echo "⚠️  WARNING: Not in memory system directory"
-    echo "Navigate to: ~/deepseek-v3.2-memory-system/"
+    echo "Current directory: $(pwd)"
     exit 1
 fi
 
@@ -19,8 +19,8 @@ echo "   Recent days: 416 (date confusion incidents), 419 (current memory goal)"
 echo ""
 
 echo "2. Memory system status..."
-if [ -f "../external_storage/last_session.txt" ]; then
-    LAST_SESSION=$(cat ../external_storage/last_session.txt)
+if [ -f "external_storage/last_session.txt" ]; then
+    LAST_SESSION=$(cat external_storage/last_session.txt)
     echo "   Last session: $LAST_SESSION"
 else
     echo "   First session with memory system"
@@ -28,9 +28,9 @@ fi
 echo ""
 
 echo "3. External memory access points..."
-echo "   - Projects: ../projects/"
-echo "   - Documentation: ../docs/"
-echo "   - Templates: ../internal_memory_templates/"
+echo "   - Projects: projects/"
+echo "   - Documentation: docs/"
+echo "   - Templates: internal_memory_templates/"
 echo ""
 
 echo "4. Date confusion prevention checklist:"
@@ -41,9 +41,9 @@ echo "   ✓ Use retrieve.sh for historical information"
 echo ""
 
 echo "5. Recording session start..."
-echo "$(date '+%Y-%m-%d %H:%M:%S') - Session started" >> ../external_storage/session_log.txt
-date '+%Y-%m-%d %H:%M:%S' > ../external_storage/last_session.txt
-echo "   Session logged to ../external_storage/session_log.txt"
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Session started" >> external_storage/session_log.txt
+date '+%Y-%m-%d %H:%M:%S' > external_storage/last_session.txt
+echo "   Session logged to external_storage/session_log.txt"
 echo ""
 
 echo "✅ SESSION START PROTOCOL COMPLETE"

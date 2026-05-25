@@ -25,7 +25,7 @@ echo "Character count: $CHAR_COUNT"
 if [ "$CHAR_COUNT" -lt 7000 ]; then
     echo "⚠️  WARNING: Below recommended minimum (~7500)"
     echo "   Consider adding structured padding"
-    echo "   See: ../docs/scaffolding_constraints.md"
+    echo "   See: docs/scaffolding_constraints.md"
     exit 1
 elif [ "$CHAR_COUNT" -lt 8000 ]; then
     echo "⚠️  CAUTION: Near minimum threshold"
